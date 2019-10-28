@@ -34,7 +34,7 @@ public class FormController {
 		//repo.save(customers);
 		return "customer";
 	}
-	@RequestMapping("/details")
+	@RequestMapping("/details")//customerのデータを保存するため
 	public String details(Customers customers) {
 		repo.save(customers);
 		
@@ -48,7 +48,7 @@ public String show() {
 }
 
 */
-@PostMapping("/getdetails")
+@PostMapping("/getdetails")//保存したデータを見るため
 public ModelAndView getdetails(@RequestParam int cid){
 	
 	ModelAndView mv = new ModelAndView("Retrive");
@@ -57,13 +57,13 @@ public ModelAndView getdetails(@RequestParam int cid){
 	return mv;
 }
 
-@RequestMapping("/customers")
+@RequestMapping("/customers")//JSONで全部データを見ること
 @ResponseBody
 public List<Customers> customers() {
 	return repo.findAll();
 }
 
-@RequestMapping("/customers/{cid}")
+@RequestMapping("/customers/{cid}")//Idを使ってデータを見るため
 @ResponseBody
 public Optional<Customers> getcustomers(@PathVariable("cid") int cid) {
 	return repo.findById(cid);
@@ -84,4 +84,3 @@ public Customers getCustomerDelete(@PathVariable("cid") int cid) {
 
 
 }
-

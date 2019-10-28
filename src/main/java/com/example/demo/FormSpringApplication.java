@@ -8,6 +8,8 @@ import org.springframework.context.annotation.ComponentScan;
 
 import com.example.demo.FormSpringApplication;
 
+//マイン メテオド
+
 @ComponentScan
 @SpringBootApplication
 public class FormSpringApplication extends SpringBootServletInitializer {
