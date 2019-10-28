@@ -74,7 +74,7 @@ public Customers getCustomerCreate(@RequestBody Customers customers) {
 	return repo.save(customers);
 }
 
-@DeleteMapping("/customers") //削除メテオドを作りました。
+@DeleteMapping("/customers/{cid}") //削除メテオドを作りました。
 public Customers getCustomerDelete(@PathVariable("cid") int cid) {
 	Customers cust = repo.getOne(cid);
 	repo.delete(cust);
